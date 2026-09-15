@@ -1,0 +1,35 @@
+/**
+ * ============================================================================
+ * 100 Days of Code Challenge - UPES
+ * Day 37 | Question 73
+ * Category: 2D Arrays
+ * 
+ * Problem Statement:
+ * Find the sum of each row of a matrix and store it in an array.
+ * 
+ * Sample Test Cases:
+ *   Test Case 1:
+ *     Input:  '2 3\n1 2 3\n4 5 6'
+ *     Output: '6 15'
+ * ============================================================================
+ */
+
+#include <stdio.h>
+
+int main() {
+    int r, c;
+    if (scanf("%d %d", &r, &c) == 2) {
+        int row_sum[100] = {0};
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                int val;
+                scanf("%d", &val);
+                row_sum[i] += val;
+            }
+        }
+        for (int i = 0; i < r; i++) {
+            printf("%d%c", row_sum[i], (i == r - 1 ? '\n' : ' '));
+        }
+    }
+    return 0;
+}
